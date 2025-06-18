@@ -6,7 +6,7 @@
     <title>YanivAshwal-Portfolio-Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/93cac59c88.js" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="css/style.css">
@@ -20,11 +20,17 @@
     </div>
     <div class="page_2">
         <div class="intro">
-            <h2 class="name-tag">Hi, I am Yaniv Ashwal</h2>
+            <h2 class="name-tag">Hi, I am <span class="my-name">Yaniv Ashwal</span></h2>
             <div class="intro-info">
-                <div>A passionate Software Engineering student</div>
-                <div>Pursuing a BS in Computer Science</div>
-                <div>University of Maryland</div>
+                <div class="info-desc">A software Engineering Student</div>
+                <div class="info-edu-name">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    University of Maryland
+                </div>
+                <div class="info-from-name">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Cleveland, Ohio
+                </div>
             </div>
         </div>
         <div class="info-box">
@@ -49,9 +55,20 @@
         <div class="profile-pic-wrapper">
             <img src="images/cropped senior headshot.jpg" alt="headshot" class="profile-pic">
         </div>
+    </div> <!-- end of .page_2 -->
+
+    <!-- test scrollable content -->
+    <div class="scroll-test" style="padding:2rem; background:#2a2a2a; color:#fff;">
+      <h2>Scroll Test Area</h2>
+      <p>Line 1: If you can see this, scrolling is enabled.</p>
+      <p>Line 2: Keep scrolling…</p>
+      <p>Line 3: Testing scroll.</p>
+      <p>Line 4: Testing scroll.</p>
+      <p>Line 5: Testing scroll.</p>
+
+      <p>Line 20: End of test.</p>
     </div>
 
-    <!-- point at your actual js folder -->
     <script src="js/main.js"></script>
 </body>
 </html>
