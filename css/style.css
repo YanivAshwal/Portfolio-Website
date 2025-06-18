@@ -1,0 +1,210 @@
+body, html {
+    height: 100%;
+    overflow: hidden;
+    background: hsl(200, 6%, 10%);   /* dark gray background */
+    color: #f1f1f1;
+}
+
+.center_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+}
+.center_box h1 { 
+    margin-bottom:0;
+    font-weight:500;
+}
+.center_box h3 {
+    margin-top: 0;
+    font-weight: 200;
+}
+
+.zoom_text {
+    display: inline-block;
+    transition: 
+        transform 0.2s cubic-bezier(.4,0,.2,1),
+        opacity 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+.zoom_top, .zoom_bottom {
+    transition: transform 0.4s linear;
+}
+
+.page_2  { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: Montserrat;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: 
+        opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+     
+    /* transform: scale(0.8) translateY(-50%); */
+    pointer-events: none; /* prevent interaction when invisible */
+}
+
+.intro { 
+    margin: 3rem 0 0 3rem;
+    background-color: rgb(48, 48, 48);
+    border-radius: 8px;
+    padding: 1rem 1rem 1rem 1rem;
+}
+.name-tag {
+    font-size: 2.3rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+
+}
+.intro-info {
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.info-box {
+    margin: 3rem 0 0 3rem;
+    background-color: rgb(48, 48, 48);
+    border-radius: 8px;
+    padding: 1rem 1rem 1rem 1rem
+}
+
+.my-info {
+    font-weight: 500;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.email { 
+    color: #c6b892;
+    text-decoration:underline;
+
+}
+
+.icon-btns {
+    margin-top: 1rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+
+}
+.icon-btn {
+    width: 2.38rem;
+    height: 2.38rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    text-decoration: none;
+    border: none;
+    font-size: 2.5rem;
+    color: #c6b892;
+    transition: color 0.2s, box-shadow 0.2s ease-in-out, border-radius 0.2s ease-in-out, transform 0.2s ease-in-out;
+    box-sizing: border-box;
+    padding: 0;
+}
+.icon-btn.square,
+.icon-btn.square:hover {
+    border-radius: 10%;
+    width: 2.38rem;
+    height: 2.38rem;
+    font-size: 2.5rem;
+}
+.icon-btn i  {
+    pointer-events: none;
+    line-height: 1;
+    vertical-align: middle;
+}
+.icon-btn.square i.fa-linkedin {
+    font-size: 2.7rem;
+    line-height: 1;
+    border-radius: 8%;
+}
+.icon-btn:hover {
+    transform: scale(1.1);
+    color: #f8f5e9;
+    box-shadow: 
+        0 0 10px 2px #D5C186, 
+        0 0 6px 1px #9E8B5A,
+        0 0 4px 1px #4E4733;
+}
+
+/* Optional: Tighter glow for square button */
+.icon-btn.square:hover {
+    scale: (1.1);
+    box-shadow: 
+        0 0 8px 1px #D5C186, 
+        0 0 4px 1px #9E8B5A,
+        0 0 2px 1px #4E4733;
+}
+
+
+
+
+
+.profile-pic-wrapper {
+    position: absolute;
+    top: 50%;
+    right: 6rem;
+    border-radius: 10%;
+    transform: translateY(-50%);
+    perspective: 1200px; /* Adds 3D perspective */
+    width: 40vw;
+    max-width: 400px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10%;
+    box-shadow: 0px 0px 16px rgba(53, 53, 53, 0.75);
+    transition: 
+        transform 1.2s cubic-bezier(.4,0,.2,1),
+        box-shadow 0.4s cubic-bezier(.4,0,.2,1);
+    will-change: transform;
+}
+
+.profile-pic-wrapper:hover .profile-pic {
+    box-shadow: 
+        0 0 55px -5px #D5C186, 
+        0 0 30px -5px #9E8B5A, /*#A69873, */
+        0px 0px 16px #4E4733;/*#6B6245;*/ /* keep the original shadow for depth */
+    transition-duration: 150ms;
+    transition-property: box-shadow, transform;
+    transition-timing-function: ease-out;
+}
+
+.profile-pic-wrapper::before { /* add overlay, to work needs image --background: ; */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    opacity: 0.3;
+}
+
+.profile-pic-wrapper:hover {
+    transition-duration: 150ms;
+    box-shadow: 0 0 55px -5px rgb(255, 146, 228), 0 0 30px -5px rgb(0, 255, 191),
+}
