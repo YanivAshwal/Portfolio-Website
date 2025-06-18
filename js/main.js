@@ -1,7 +1,7 @@
 let zoomLevel = 1;
 const minZoom = 1;
 const maxZoom = 6.68;
-const zoomStep = 0.1;
+const zoomStep = 0.17;
 
 const zoomText = document.querySelector('.zoom_text');
 const page2 = document.querySelector('.page_2');
@@ -12,7 +12,7 @@ function updateZoom() {
     const progress = (zoomLevel - minZoom) / (maxZoom - minZoom);
 
     // Delay page2 appearance by offsetting progress
-    const delay = 0.4; // 0.2 = 20% delay, adjust as needed (0 to 1)
+    const delay = 0.7; // 0.2 = 20% delay, adjust as needed (0 to 1)
     let page2Progress = (progress - delay) / (1 - delay);
     page2Progress = Math.max(0, Math.min(1, page2Progress)); // Clamp between 0 and 1
 
@@ -29,19 +29,39 @@ function updateZoom() {
     page2.style.opacity = page2Progress;
     page2.style.transform = `scale(${page2Scale})`;
     page2.style.pointerEvents = page2Progress > 0.95 ? 'auto' : 'none';
+
+  // when page 2 is fully visible
+  if (page2Progress >= 1) {
+    // allow body scrolling
+    document.body.classList.add('scroll-enabled');
+    document.documentElement.classList.add('scroll-enabled');
+  } else {
+    document.body.classList.remove('scroll-enabled');
+    document.documentElement.classList.remove('scroll-enabled');
+  }
 }
 
-window.addEventListener('wheel', function(e) {
-    if (e.deltaY > 0) {
-        zoomLevel = Math.min(maxZoom, zoomLevel + zoomStep);
-    } else {
-        zoomLevel = Math.max(minZoom, zoomLevel - zoomStep);
-    }
-    updateZoom();
-    e.preventDefault();
-}, { passive: false });
+function onWheel(e) {
+  // if we’ve “unlocked” scrolling, do nothing and let the browser scroll
+  if (document.body.classList.contains('scroll-enabled')) return;
+
+  // otherwise handle zoom…
+  if (e.deltaY > 0) {
+    zoomLevel = Math.min(maxZoom, zoomLevel + zoomStep);
+  } else {
+    zoomLevel = Math.max(minZoom, zoomLevel - zoomStep);
+  }
+  updateZoom();
+
+  // prevent the default scroll while zooming
+  e.preventDefault();
+}
+
+window.addEventListener('wheel', onWheel, { passive: false });
 
 updateZoom();
+
+
 
 const prof_pic_wrapper = document.querySelector(".profile-pic-wrapper");
 let bounds;
@@ -63,10 +83,6 @@ function rotateToMouse(e) {
     const profilePic = prof_pic_wrapper.querySelector(".profile-pic");
     profilePic.style.transform =
         `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
-
-    // Subtle glow effect
-    profilePic.style.backgroundImage =
-        `radial-gradient(circle at ${center.x * 1.2 + bounds.width / 2}px ${center.y * 1.2 + bounds.height / 2}px, #fff8, #ffbbe2 60%, transparent 100%)`;
 }
 
 prof_pic_wrapper.addEventListener("mouseenter", () => {
