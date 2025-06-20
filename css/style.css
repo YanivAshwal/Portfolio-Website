@@ -58,11 +58,8 @@ html.scroll-enabled {
     height: 100vh;
     width: 100vw;
     pointer-events: none;
-
-    /* add a radial dot-grid background */
     background-color: hsl(200, 6%, 10%);
     background-image:
-      /* rings every 40px, 1px thick */
       repeating-radial-gradient(
         circle at center,
         rgba(255,255,255,0.1) 1px,
@@ -71,7 +68,6 @@ html.scroll-enabled {
         rgba(255,255,255,0.1) 41px
       );
 
-    /* fill the entire area without tiling */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -89,13 +85,9 @@ html.scroll-enabled {
 }
 
 .my-name {
-  /* define your gradient here */
-  /* background: linear-gradient(to right,#E9DCB9 0% ,#C3B186 50%, #A9975E 100%); #4facfe, #ff8a00 */
   background: #c6b892;
-  /* clip the gradient into the text… */
   -webkit-background-clip: text;
           background-clip: text;
-  /* …and make the text itself transparent */
   -webkit-text-fill-color: transparent;
           color: transparent;
 }
@@ -110,17 +102,15 @@ html.scroll-enabled {
     align-items: center;
 }
 
-/* give all icons a fixed width so text starts in the same column */
 .intro-info > div i {
   display: inline-block;
-  width: 1.2rem;      /* adjust as needed */
+  width: 1.2rem;
   text-align: center;
   flex-shrink: 0;
 }
 
 .info-edu-name,
 .info-from-name {
-    /* inherits flex from above, but you can override spacing here */
     gap: 0.75rem;
 }
 
@@ -130,85 +120,50 @@ html.scroll-enabled {
     margin-top: -1rem;
 }
 
-.info-box {
-    margin: 3rem 0 0 3rem;
-    background-color: rgb(48, 48, 48);
-    border-radius: 8px;
-    padding: 1rem 1rem 1rem 1rem
-}
-
-.my-info {
-    font-weight: 500;
-    margin-top: 0rem;
-    margin-bottom: 0rem;
-}
-
-.email { 
-    color: #c6b892;
-    text-decoration:underline;
-
-}
-
 .icon-btns {
-    margin-top: 1rem;
-    display: flex;
-    gap: 2rem;
-    justify-content: space-around;
-
-}
-.icon-btn {
-    width: 2.38rem;
-    height: 2.38rem;
-    border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: none;
-    text-decoration: none;
-    border: none;
-    font-size: 2.5rem;
+    font-size: 1rem;
+    gap: clamp(0.5rem, 2vw, 1.5rem);
+    margin-top: 0.8rem;
+}
+.icon-btn {
     color: #c6b892;
-    transition: color 0.2s,
-        box-shadow 0.2s ease-in-out,
-        border-radius 0.2s ease-in-out,
-        transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    transition: 0.1s ease-in-out ;
     box-sizing: border-box;
-    padding: 0;
-}
-.icon-btn.square,
-.icon-btn.square:hover {
-    border-radius: 10%;
-    width: 2.38rem;
-    height: 2.38rem;
-    font-size: 2.5rem;
-}
-.icon-btn i  {
-    pointer-events: none;
-    line-height: 1;
-    vertical-align: middle;
-}
-.icon-btn.square i.fa-linkedin {
-    font-size: 2.7rem;
-    line-height: 1;
-    border-radius: 8%;
-}
-.icon-btn:hover {
-    transform: scale(1.1);
-    color: #f8f5e9;
-    box-shadow: 
-        0 0 10px 2px #D5C186, 
-        0 0 6px 1px #9E8B5A,
-        0 0 4px 1px #4E4733;
+    align-items: center;
+    justify-content: flex-start;
+    width: 2.5rem;
+    height: 2.5rem;
+    aspect-ratio: 1/1;
+    
 }
 
-/* Optional: Tighter glow for square button */
-.icon-btn.square:hover {
-    scale: (1.1);
-    box-shadow: 
-        0 0 8px 1px #D5C186, 
-        0 0 4px 1px #9E8B5A,
-        0 0 2px 1px #4E4733;
+.icon-btn i {
+    font-size: 2.5rem;
+    justify-content: center;
+    display: inline-flex;
 }
+
+.icon-btn:hover {
+    transform: scale(1.1);
+    color: #fdf9ed;
+}
+
+.icon-btn.tall {
+    display: flex;
+    flex-direction: row;
+    width: 2rem;
+    gap: 1rem;
+}
+.resume {
+    font-size: 1.1rem;
+    line-height: 1rem;
+}
+
 
 .profile-pic-wrapper {
     position: absolute;
