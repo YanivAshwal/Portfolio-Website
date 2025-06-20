@@ -19,6 +19,10 @@
         </div>
     </div>
     <div class="page_2">
+        <!-- <div class="nav-bar">
+            
+        </div> -->
+
         <div class="intro">
             <h2 class="name-tag">Hi, I am <span class="my-name">Yaniv Ashwal</span></h2>
             <div class="intro-info">
@@ -31,25 +35,34 @@
                     <i class="fa-solid fa-location-dot"></i>
                     Cleveland, Ohio
                 </div>
-            </div>
-        </div>
-        <div class="info-box">
-            <h3 class="my-info">My Info:</h3>
-            <script> //to obfuscate to avoid scams / spam
-                const parts = ["yanivashwal28", "gmail", "com"];
-                const email = parts[0] + "@" + parts[1] + "." + parts[2];
-                document.write('<a class="email" href="mailto:' + email + '">' + email + '</a>');
-            </script>
-            <div class="icon-btns">
-                <a href="https://github.com/YanivAshwal" target="_blank" class="icon-btn" aria-label="github">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="www.linkedin.com/in/yaniv-ashwal/" target="_blank" class="icon-btn square" aria-label="linkedin">
-                    <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href="https://open.spotify.com/user/yanivashwal" target="_blank" class="icon-btn" aria-label="spotify">
-                    <i class="fa-brands fa-spotify"></i>
-                </a>
+                <div class="icon-btns">
+                    <a href="https://github.com/YanivAshwal" target="_blank" class="icon-btn circle" aria-label="My GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="www.linkedin.com/in/yaniv-ashwal/" target="_blank" class="icon-btn square" aria-label="My LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <script>
+                        // obfuscate to avoid spambots
+                        const parts1 = ["yanivashwal28","gmail","com"];
+                        const email1 = parts1[0] + "@" + parts1[1] + "." + parts1[2];
+                        document.write(
+                          '<a href="mailto:' + email1 + '" ' +
+                             'class="icon-btn rect" ' +
+                             'aria-label="Email">' +
+                            '<i class="fa-solid fa-envelope"></i>' +
+                          '</a>'
+                        );
+                    </script>
+                    <!-- <a href="https://open.spotify.com/user/yanivashwal" target="_blank" class="icon-btn-circle" aria-label="My Spotify!">
+                        <i class="fa-brands fa-spotify"></i>
+                    </a> -->
+                    <a href="assets/Yaniv_Ashwal_Resume.pdf" download="Yaniv_Ashwal_Resume.pdf" target="_blank" class="icon-btn tall"
+                    aria-label="download-resume">
+                        <i class="fa-solid fa-file"></i>
+                        <div class="resume">My resume</div>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="profile-pic-wrapper">
@@ -58,7 +71,7 @@
     </div> <!-- end of .page_2 -->
 
     <!-- test scrollable content -->
-    <div class="scroll-test" style="padding:2rem; background:#2a2a2a; color:#fff;">
+    <div class="scroll-test" style="padding:2rem; color:#fff;">
       <h2>Scroll Test Area</h2>
       <p>Line 1: If you can see this, scrolling is enabled.</p>
       <p>Line 2: Keep scrolling…</p>
