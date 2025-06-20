@@ -41,8 +41,26 @@ html.scroll-enabled {
 .zoom_top, .zoom_bottom {
     transition: transform 0.4s linear;
 }
+.intro-overlay {
+  position: fixed;
+  inset: 0;                  /* top:0;left:0;right:0;bottom:0 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: inherit;  z-index: 10;
+  transition: transform 0.2s, opacity 0.2s;
+}
+body.scrolled .intro-overlay {
+  transform: scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+}
 
-.page_2  { 
+.main-content {
+    min-height: 100vh;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.2s cubic-bezier(.4,0,.2,1), opacity 0.2s;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -50,13 +68,10 @@ html.scroll-enabled {
     opacity: 0;
     transform: scale(0.8);
     transition: 
-        transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    position: absolute;
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     top: 0;
     left: 0;
     right: 0;
-    height: 100vh;
-    width: 100vw;
     pointer-events: none;
     background-color: hsl(200, 6%, 10%);
     background-image:
@@ -70,6 +85,25 @@ html.scroll-enabled {
 
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+body.scrolled .main-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nav-bar {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdf9ed;
+    width: 50vw;
+    margin: 0 auto;
+}
+
+.nav-text {
+    color: #000000;
 }
 
 .intro { 
@@ -91,11 +125,13 @@ html.scroll-enabled {
   -webkit-text-fill-color: transparent;
           color: transparent;
 }
+
 .intro-info {
     padding: 0;
     margin-top: -0.5rem;
     font-size: 1.1rem;
     font-weight: 300;
+    position: relative;
 }
 .intro-info > div {
     display: flex;
@@ -114,38 +150,34 @@ html.scroll-enabled {
     gap: 0.75rem;
 }
 
-.info-desc {
+.info-desc { 
+    /* a software engine... */
     font-weight: 400;
     font-size: 1.8rem;
-    margin-top: -1rem;
 }
 
+
+
 .icon-btns {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    gap: clamp(0.5rem, 2vw, 1.5rem);
-    margin-top: 0.8rem;
+    gap: 2.5rem; /* space between */
+    margin-top: 0.7rem;
+    width: fit-content;
+    /* outline: 1px solid salmon; */
 }
+
 .icon-btn {
-    color: #c6b892;
-    display: flex;
-    flex-direction: row;
-    text-decoration: none;
-    transition: 0.1s ease-in-out ;
-    box-sizing: border-box;
-    align-items: center;
-    justify-content: flex-start;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: clamp(1rem, 1,5rem, 4rem);
     aspect-ratio: 1/1;
-    
+    color: #c6b892;
+    text-decoration: none; /* no underline */
+
 }
 
 .icon-btn i {
-    font-size: 2.5rem;
-    justify-content: center;
-    display: inline-flex;
+    font-size: 2.5rem; /* icon Size */
+    transition: 0.2s ease-in-out ;
+    /* outline: 1px dashed gold; */
+    
 }
 
 .icon-btn:hover {
@@ -153,26 +185,30 @@ html.scroll-enabled {
     color: #fdf9ed;
 }
 
-.icon-btn.tall {
+.icon-btn.circle  { border-radius: 50%; }
+.icon-btn.square  { border-radius: .5rem; }
+.icon-btn.rect    { border-radius: .25rem; }
+.icon-btn.tall    { 
     display: flex;
-    flex-direction: row;
-    width: 2rem;
-    gap: 1rem;
-}
+    align-items: center;
+    gap: 1.1rem;
+    height: 1rem;
+    /* outline: 1px solid floralwhite; */
+    }
+
 .resume {
     font-size: 1.1rem;
     line-height: 1rem;
 }
 
-
 .profile-pic-wrapper {
     position: absolute;
-    top: 3rem;
-    right: 3rem;
+    display: flex;
+    top: 2rem; right: 2rem;
     perspective: 1200px;
-    width: clamp(50px, 20vw, 400px);
+    width: clamp(150px,20vw,350px);
     aspect-ratio: 1/1;
-    transition:  width 0.4s ease-in-out;
+    transition:  width 0.2s ease-in-out;
 }
 
 .profile-pic {
@@ -181,25 +217,23 @@ html.scroll-enabled {
     object-fit: cover;
     object-position: center;
     border-radius: 10%;
-    box-shadow: 0px 0px 16px rgba(53, 53, 53, 0.75);
     backface-visibility: hidden;
+    box-shadow: 0 0 16px rgba(53,53,53,.75);
     transition: 
-        transform 1.2s cubic-bezier(.4,0,.2,1),
-        box-shadow 0.4s cubic-bezier(.4,0,.2,1);
+        transform 0.2s,
+        box-shadow .2s;
     will-change: transform;
 }
 
 .profile-pic-wrapper:hover .profile-pic {
-    box-shadow: 
-        0 0 35px -5px #D5C186, 
-        0 0 20px -5px #9E8B5A, 
-        0px 0px 16px #4E4733;
-    transition-duration: 150ms;
-    transition-property: box-shadow, transform;
-    transition-timing-function: ease-out;
+    box-shadow:
+      0 0 35px -5px #D5C186,
+      0 0 20px -5px #9E8B5A,
+      0 0 16px     #4E4733;
+    transition-duration: .2s;
 }
 
+/* Remove leftover pseudo‐glow */
 .profile-pic-wrapper::before {
     content: none;
-    /* or display: none; */
 }
