@@ -57,7 +57,7 @@ body.scrolled .intro-overlay {
 }
 
 .nav-bar {
-    position: absolute;
+    position: fixed;
     top: 0%;
     left: 50%; 
     transform: translatex(-50%);
@@ -124,7 +124,7 @@ body.scrolled .main-content {
     margin: 4rem 0 0 2rem;
     border-radius: 8px;
     padding: 0 1rem 1rem 1rem;
-    outline: 1px solid salmon;
+    outline: 1px solid salmon 0; /* 0 sets opacity to 0 */
 }
 .name-tag {
     font-size: 4rem;
