@@ -22,7 +22,7 @@ html.scroll-enabled {
 
 .nav-bar {
     position: fixed;
-    top: 0%;
+    top: 2%;
     left: 50%; 
     transform: translatex(-50%);
     display: flex;
@@ -31,22 +31,47 @@ html.scroll-enabled {
     padding: 0.2rem;
     justify-content: space-evenly;
     border-radius: 5px;
-    background-color: #fdf9ed;
+    background-color: #fffefa;
 }
 
 .nav-bar-btns {
     white-space: nowrap;
     display: flex;
     align-items: center;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     font-size: 1.2rem;
     color: hsl(200, 6%, 10%);
     text-decoration: none;
-    padding: 1.5rem 0.6rem;
-    background-color: rgba(99, 99, 99, 0.7); 
+    padding: 1.2rem;
+    /* background-color: rgba(201, 201, 201, 0.7); */
+    position: relative;
+}
 
+.nav-bar-btns:hover .btn-text,
+.nav-bar-btns:hover .nav-bar-btns-text {
+  transform: scale(1.3);
+}
+.nav-bar-btns-text {
+  position: relative;        /* establish a positioning context */
+  transform-origin: center;
+  transition: 0.2s ease-out;
+}
 
-} 
+.nav-bar-btns + .nav-bar-btns::before { 
+    content: "";
+    position: absolute;
+    background-color: rgb(80, 80, 80);
+    left: 0;
+    top: 15%;
+    height: 75%;
+    width: 0.8px;
+}
+
+.nav-bar-btns-text:hover {
+    transform: scale(1.3);
+    transition: 0.3s ease-out;
+}
+
 
 .main-content {
     min-height: 100vh;
