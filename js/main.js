@@ -27,3 +27,4 @@ profPicWrapper.addEventListener('mouseleave', () => {
   pic.style.transform       = '';
   pic.style.backgroundImage = '';
 });
+
