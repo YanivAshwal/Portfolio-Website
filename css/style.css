@@ -218,14 +218,24 @@ html.scroll-enabled {
 
 .experience-box, .projects-box {
     display: flex;
-    padding: 0.1rem 7rem;
+    padding: 0.4rem 7rem;
     outline: 1px solid seagreen 0;
     background-color: #908a78;
     border-radius: 7px;
     font-size: 1.3rem;
-    
+    border-style: none;
+    cursor: pointer;
 }
 
+.experience-box:hover, .projects-box:hover { 
+    background-color: #79766d;
+    transition: .4s;
+}
+
+.center-btns:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-out;
+}
 
 
 
@@ -250,7 +260,7 @@ html.scroll-enabled {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 10%;
+    border-radius: 50%;
     backface-visibility: hidden;
     box-shadow: 0 0 16px rgba(53,53,53,.75);
     transition: 
