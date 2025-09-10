@@ -238,13 +238,13 @@ html.scroll-enabled {
 }
 
 .center-btns:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
     transition: 0.3s ease-out;
 }
 
 .experience-box:hover .center-btns,
 .projects-box:hover .center-btns {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 
