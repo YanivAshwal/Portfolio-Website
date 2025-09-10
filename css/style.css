@@ -227,9 +227,14 @@ html.scroll-enabled {
     cursor: pointer;
 }
 
-.experience-box:hover, .projects-box:hover { 
+.experience-box:hover,
+.projects-box:hover { 
     background-color: #79766d;
-    transition: .4s;
+}
+
+.center-btns {
+    display: inline-block;
+    transition: transform 0.3s ease-out;
 }
 
 .center-btns:hover {
@@ -237,6 +242,10 @@ html.scroll-enabled {
     transition: 0.3s ease-out;
 }
 
+.experience-box:hover .center-btns,
+.projects-box:hover .center-btns {
+  transform: scale(1.1);
+}
 
 
 
