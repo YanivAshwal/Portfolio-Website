@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>contactMe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -32,6 +32,36 @@
                 <span class="nav-bar-btns-text">Contact Me</span>
             </a>
         </nav>
+
+        <div>
+            <h1 class="contactme-lbl">Say Hello,</h1>
+            <h5 class="socials-lbl">Reach  out on socials</h5>
+        </div>
+
+        <div class="cntct-icon-btns">
+            <div class="cntct-lbls">On Github:</div>
+            <a href="https://github.com/YanivAshwal" target="_blank" class="icon-btn circle" aria-label="My GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <div class="cntct-lbls"> On LinkedIn</div>
+            <a href="www.linkedin.com/in/yaniv-ashwal/" target="_blank" class="icon-btn square" aria-label="My LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <div class="cntct-lbls">Or send an email</div>
+            <script>
+                // obfuscate to avoid spambots
+                const parts1 = ["yanivashwal28","gmail","com"];
+                const email1 = parts1[0] + "@" + parts1[1] + "." + parts1[2];
+                document.write(
+                    '<a href="mailto:' + email1 + '" ' +
+                        'class="icon-btn rect" ' +
+                        'aria-label="Email">' +
+                    '<i class="fa-solid fa-envelope"></i>' +
+                    '</a>'
+                );
+            </script>
+        </div>
+
     </main>
 </body>
 </html>
