@@ -108,6 +108,7 @@ html.scroll-enabled {
     outline: 1px solid salmon 0; /* 0 sets opacity to 0 */
     text-align: center;
 }
+
 .name-tag {
     font-size: 4rem;
     font-weight: 500;
@@ -295,39 +296,28 @@ html.scroll-enabled {
 
 
 /* contact me page */
+.cntct-main {
+    margin: 15rem auto 0;
+    border-radius: 8px;
+    padding: 0 1rem 1rem;
+    outline: 1px solid salmon 0; /* 0 sets opacity to 0 */
+    text-align: center;
+
+}
+
 .contactme-lbl {
-    color: #fdf9ed;
-    font-size: 4.5rem;
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-    outline: 2px solid salmon 0;
-
-    margin-top: 7rem;
-    margin-left: 5rem;
-    margin-bottom: -1.5rem;
+    font-size: 4rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+    color:#fdf9ed;
 }
 
-.socials-lbl {
-    color: #fdf9ed;
-    font-size: 2rem;
-    font-weight: 300;
-    outline: 2px solid salmon 0;
-    margin-left: 5rem;
-    white-space: pre-wrap;
-}
-
-
-.cntct-icon-btns {
-    margin-left: 5rem;
-}
 .cntct-lbls {
     color: #fdf9ed;
     font-size: 1.5rem;
+    width: auto;
 }
 .cntct-icon-btns .icon-btn {
     color: rgb(207, 241, 241);
-    margin-right:1rem;
-    
-
-
 }
