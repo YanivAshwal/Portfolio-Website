@@ -35,24 +35,51 @@
         
         <div class="cntct-main">
             <div>
-                <div class="contactme-lbl">Say Hi,  </div>
+                <div class="contactme-lbl">Say Hello,</div>
             </div>
+
+
+
+            <div class="cntct-form">
+                <form action="https://formspree.io/f/xojqrpdl" method="POST">
+                    <div class="form-group">
+                        <label class="cntct-lbls" for="name">Name: </label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="cntct-lbls">Email: </label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="cntct-lbls">
+                            Your message:
+                            <textarea name="message" id="message" rows="5" required></textarea>
+                        </label>
+                    </div>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+
+
 
             <div class="cntct-icon-btns">
                 <div class="cntct-row">
-                    <div class="cntct-lbls">On Github</div>
+                    <div class="cntct-lbls">On Github   </div>
                     <a href="https://github.com/YanivAshwal" target="_blank" class="icon-btn circle" aria-label="My GitHub">
                         <i class="fa-brands fa-github"></i>
                     </a>
                 </div>
                 <div class="cntct-row">
-                    <div class="cntct-lbls"> On LinkedIn</div>
+                    <div class="cntct-lbls">On LinkedIn </div>
                     <a href="https://www.linkedin.com/in/yaniv-ashwal/" target="_blank" class="icon-btn square" aria-label="My LinkedIn">
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
                 </div>
                 <div class="cntct-row">
-                    <div class="cntct-lbls">Or by email</div>
+                    <div class="cntct-lbls">Or by email </div>
                     <script>
                         // obfuscate to avoid spambots
                         const parts1 = ["yanivashwal28","gmail","com"];
