@@ -28,3 +28,49 @@ profPicWrapper.addEventListener('mouseleave', () => {
   pic.style.backgroundImage = '';
 });
 
+
+/* BAD FORM REDIRECT HALTER 
+const form = document.querySelector(".cntct-form form");
+console.log(form); 
+
+if (form) {
+  form.addEventListener('submit', async(event) => { 
+    event.preventDefault();
+
+    console.log("submit event triggered");
+
+    const formData = new FormData(form);
+
+    console.log("form data contents");
+    for (let [key, value] of formData.entries()) {
+      console.log(`${key}: ${value}`);
+    }
+
+    try { 
+      console.log("attempting to fetch...");
+      const response = await fetch("https://formspree.io/f/xojqrpdl",  {
+        method: 'POST',
+        body: formData, 
+        headers: { 
+          'Accept': 'application/json'
+        }
+      });
+
+      console.log("response recieved:", response); 
+
+      if (response.ok) {
+        console.log("success");
+        alert('Thank you for your Message!');
+        form.reset();
+      } else { 
+        console.log("failure");
+        alert('Oops, there was a problem with your submission, try again!');
+      }
+    } catch (error) { 
+      console.log("error caught");
+      console.error(error);
+      alert('Oops! Network Error.');
+    }
+  });
+}
+*/ 
