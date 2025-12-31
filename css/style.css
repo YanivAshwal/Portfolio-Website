@@ -295,7 +295,6 @@ html.scroll-enabled {
 
 /* CONTACT ME PAGE */
 .cntct-main {
-
     margin: 8rem auto 0;
     border-radius: 8px;
     padding: 0 1rem 1rem;
@@ -313,31 +312,34 @@ html.scroll-enabled {
 .cntct-form form{
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin: 2rem 0;
-    width: 100%;
+    margin: 1rem 0;
+    gap: 0.8rem;
     max-width: 400px;
-    padding: -1rem;
+
 }
 
 .cntct-form input {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.10);
     /* backdrop-filter:brightness(1);
     -webkit-backdrop-filter: brightness(1); /* safari support */
     width: 100;
-    border-radius: 5px 5px 5px 5px ;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #c6b892;
     resize: none;
     overflow-y: auto;  
     font-family: Poppins, sans-serif;
     color: #fdf9ed;
     font-size: large;
+    width: 85%;
+    
 }
 
 .cntct-form textarea {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(255, 255, 255, 0.1);
     /* backdrop-filter:brightness(1);
     -webkit-backdrop-filter: brightness(1); /* safari support */
     border-radius: 5px 5px 5px 5px;
+    border: 1px solid #c6b892;
     resize: none;
     overflow-y: auto;  
     color: #fdf9ed;
@@ -346,28 +348,36 @@ html.scroll-enabled {
     font-size: large;
 }
 
+.cntct-frm-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #c6b892;
+    font-size: large;
+    border-radius: 5px;
+    color: #fdf9ed;
+    width: 125%;
+}
 
 .cntct-lbls {
     color: #fdf9ed;
     font-size: 1.5rem;
-    
 }
 
-.cntct-icon-btns { 
+.cntct-socials {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 150%;
+    margin-left: -2.5rem;
+}
+
+.cntct-lbl-header {
+    font-size: 1.5rem;
+    color: #fdf9ed;
+    background-color: #9E8B5A;
+    text-align: center;
+
+
+}
+.cntct-lbl-icns {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    outline: 2px solid salmon 0;
-
-    background-color: #333331;
-    border-radius:0 ;
-}
-
-.cntct-row { 
-    display: flex;
-    justify-content: start;
-    gap: 2rem;
-}
-.cntct-icon-btns .icon-btn {
-    color: rgb(207, 241, 241);
+    flex-direction: row;
+    width: 125%;
 }
